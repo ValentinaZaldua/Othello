@@ -67,7 +67,7 @@ public class Othello {
     }
 
     private void cambiarTurno(int colorJugadorActual) {
-    	 turno++;
+    	turno = turnoJugadorN + turnoJugadorB;
 
     	 if (colorJugadorActual == JugadorN.COLOR_FICHA) {
     	        turnoJugadorN++;
@@ -80,7 +80,7 @@ public class Othello {
 	public void realizarAccionJugadorB(int fila, int columna) {
 		int colorJugadorActual = JugadorB.COLOR_FICHA;
 
-		cambiarTurno(JugadorB.COLOR_FICHA);
+		cambiarTurno(colorJugadorActual);
     }
     	
     	private int turno;

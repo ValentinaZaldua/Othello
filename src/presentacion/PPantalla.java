@@ -80,7 +80,9 @@ public class PPantalla extends JPanel implements MouseListener{
                        /* g2d.setColor(new Color(255, 255, 255, 128)); // Color transparente
                         g2d.fillRect(x, y, ladoCelda, ladoCelda);
                         g2d.drawImage(image, x, y, ladoCelda, ladoCelda, this);
-                    */}
+                    */
+                    	g2d.drawImage(image, x, y, this);	
+                    }
                 }
             
 		    }
@@ -126,8 +128,16 @@ public class PPantalla extends JPanel implements MouseListener{
 
         if (colorJugadorActual == JugadorN.COLOR_FICHA) {
             othello.realizarAccion(fila, columna);
+            Ficha nuevaFicha = new Ficha();  // Crea una nueva ficha o ajusta según tu lógica
+            othello.getJugadorN().agregarFicha(nuevaFicha);  // Agrega la ficha al conjunto del jugador
+            System.out.println("Ficha agregada al JugadorN");
+            System.out.println("JugadorN tiene " + othello.getJugadorN().getTurno().size() + " fichas.");
         } else if (colorJugadorActual == JugadorB.COLOR_FICHA) {
             othello.realizarAccionJugadorB(fila, columna);
+            Ficha nuevaFicha = new Ficha();  // Crea una nueva ficha o ajusta según tu lógica
+            othello.getJugadorB().agregarFicha(nuevaFicha);  // Agrega la ficha al conjunto del jugador
+            System.out.println("Ficha agregada al JugadorB");
+            System.out.println("JugadorB tiene " + othello.getJugadorB().getTurno().size() + " fichas.");
         }
 
         repaint();
