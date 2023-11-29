@@ -25,10 +25,9 @@ public class FPrincipal extends JFrame {
         this.add(bIniciar, BorderLayout.NORTH);
         bIniciar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                Othello othello = new Othello();  // Crear una nueva instancia de Othello
-                othello.inicializarTablero();      // Inicializar el tablero en la nueva instancia
+                Othello othello = new Othello();  
+                othello.inicializarTablero();     
 
-                // Asignar la nueva instancia de Othello a pPantalla
                 pPantalla.setOthello(othello);
 
                 pPantalla.repaint();

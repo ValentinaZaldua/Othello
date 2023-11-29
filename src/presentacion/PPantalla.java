@@ -77,10 +77,10 @@ public class PPantalla extends JPanel implements MouseListener{
 				int fichaMoviendoColumna = 0;
 				if (i == fichaMoviendoFila && j == fichaMoviendoColumna) {
                     if (fichaMoviendoFila >= 0 && fichaMoviendoColumna >= 0) {
-                        g2d.setColor(new Color(255, 255, 255, 128)); // Color transparente
+                       /* g2d.setColor(new Color(255, 255, 255, 128)); // Color transparente
                         g2d.fillRect(x, y, ladoCelda, ladoCelda);
                         g2d.drawImage(image, x, y, ladoCelda, ladoCelda, this);
-                    }
+                    */}
                 }
             
 		    }
@@ -110,19 +110,15 @@ public class PPantalla extends JPanel implements MouseListener{
         } else if (color == Ficha.COLOR_BLANCO) {
             return Toolkit.getDefaultToolkit().getImage("imagenes/blanca.png");
         } else {
-            return null; // Puedes manejar el caso SIN_COLOR según tus necesidades
+            return null; 
         }
     }
-
-
-	
 	
     @Override
     public void mouseClicked(MouseEvent e) {
         int x = e.getX();
         int y = e.getY();
 
-        // Calcula la celda en la que se hizo clic
         int fila = 8 - y / (getHeight() / 8 );
         int columna = 8 - x / (getWidth() / 8);
 
@@ -134,7 +130,6 @@ public class PPantalla extends JPanel implements MouseListener{
             othello.realizarAccionJugadorB(fila, columna);
         }
 
-        // Repintar la pantalla después de la acción
         repaint();
     
     }
