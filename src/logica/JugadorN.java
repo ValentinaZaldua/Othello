@@ -13,4 +13,5 @@ public class JugadorN {
 			this.turno = new ArrayList<Ficha>();
 		}
 
+		public static final int COLOR_FICHA = Ficha.COLOR_NEGRO;
 }
